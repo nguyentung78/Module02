@@ -6,7 +6,7 @@ public class bai2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("mời bạn nhập vào 1 số từ 0 => 9: ");
-        int number = sc.nextInt();
+        int number = Integer.parseInt(sc.nextLine());
         switch (number){
             case 0:
                 System.out.println("số không");
