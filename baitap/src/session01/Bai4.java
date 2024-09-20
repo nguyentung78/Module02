@@ -2,7 +2,7 @@ package session01;
 
 import java.util.Scanner;
 
-public class bai4 {
+public class Bai4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("nhập vào điểm Toán: ");
