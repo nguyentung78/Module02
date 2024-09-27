@@ -71,8 +71,8 @@ public class BookImp {
     public void calculateProfit() {
         for (int i = 0; i < currentIndex; i++) {
             arrBooks[i].setInterest(arrBooks[i].getExportPrice() - arrBooks[i].getImportPrice());
+            System.out.printf("Sách %s - Lợi nhuận: %.2f\n", arrBooks[i].getBookName(), arrBooks[i].getInterest());
         }
-        System.out.println("Lợi nhuận đã được tính.");
     }
 
     public void displayBooks() {
@@ -84,11 +84,13 @@ public class BookImp {
     public void sortBooksByExportPrice() {
         Arrays.sort(arrBooks, 0, currentIndex, (b1, b2) -> Float.compare(b1.getExportPrice(), b2.getExportPrice()));
         System.out.println("Đã sắp xếp sách theo giá bán tăng dần.");
+        displayBooks();
     }
 
     public void sortBooksByInterest() {
         Arrays.sort(arrBooks, 0, currentIndex, (b1, b2) -> Float.compare(b2.getInterest(), b1.getInterest()));
         System.out.println("Đã sắp xếp sách theo lợi nhuận giảm dần.");
+        displayBooks();
     }
 
     public void searchBookByName(Scanner scanner) {

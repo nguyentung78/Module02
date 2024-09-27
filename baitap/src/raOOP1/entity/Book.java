@@ -22,7 +22,7 @@ public class Book {
         this.exportPrice = exportPrice;
         this.author = author;
         this.year = year;
-        this.interest = exportPrice - importPrice;  // Tính lợi nhuận
+        this.interest = exportPrice - importPrice;
     }
 
     public String getBookId() {
@@ -93,16 +93,20 @@ public class Book {
 
     private String inputBookId(Scanner scanner, Book[] arrBooks, int currentIndex) {
         System.out.println("Nhập mã sách:");
+        String bookIdRegex = "B[\\w]{3}"; 
+
         do {
             String bookId = scanner.nextLine();
             boolean isExist = false;
+            // Kiểm tra mã sách đã tồn tại hay chưa
             for (int i = 0; i < currentIndex; i++) {
                 if (arrBooks[i].getBookId().equals(bookId)) {
                     isExist = true;
                     break;
                 }
             }
-            if (!isExist && bookId.matches("B[\\w]{3}")) {
+            // Kiểm tra mã sách hợp lệ và chưa tồn tại
+            if (!isExist && Pattern.matches(bookIdRegex, bookId)) {
                 return bookId;
             } else {
                 System.err.println("Mã sách không hợp lệ hoặc đã tồn tại, vui lòng nhập lại.");
