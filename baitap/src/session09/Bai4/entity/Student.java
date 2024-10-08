@@ -1,4 +1,4 @@
-package session08.Bai4.entity;
+package session09.Bai4.entity;
 
 public class Student {
     private int studentId;
